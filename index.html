@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Current Weather App</title>
+    </head>
+    
+    
+    
+    <body>
+       <input type="text" id="country">
+        <button id="btn">Know Horoscope</button>
+    
+    <!--<div id="info"></div>-->
+    
+    <script>
+        document.getElementById("btn").onclick = () =>{
+            
+           //let p= document.getElementById("country").value;
+fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=India", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
+		"x-rapidapi-key": "c6b95b3855mshfa3469709ba9839p1c0254jsnc26148be1ec8",
+        "Access-Control-Allow-Origin":"*" 
+	}
+})
+ .then(res=>{
+            console.log(res)
+            return res.json()
+            
+        }) 
+        .then(data=>{
+            console.log(data)
+           // console.log(data.covid19Stats[0].country)
+        })
+    
+        }
+            
+     </script>
+          
+</body>
+</html>
