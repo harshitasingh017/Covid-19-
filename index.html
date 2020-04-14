@@ -2,21 +2,146 @@
 <html>
     <head>
         <title>Current Weather App</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="icons/css/all.css">
     </head>
     
     
     
     <body>
-       <input type="text" id="country">
+      
+      <div class="bgimg">
+        
+                <h1>#IndiaFightsCorona COVID-19</h1>
+                
+                 <div class="row">
+            
+            <button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" >
+                    Dashboard
+                    
+                    <p id="update"></p>
+                
+            </button>
+            
+             <button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" >
+                    Active
+                    
+                    <p id="confirmed"></p>
+            
+            </button>
+            
+             
+             <button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" id="deaths">
+                    Deaths
+            
+            </button>
+             
+               
+             <button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" id="recovered">
+                    Recovered
+            
+            </button>  
+          
+        </div>
+        
+        <img src="images/aarogya.jpg">
+        
+         <div>
+           <p>Rolling updates on coronavirus disease (COVID-19) from around the world</p>
+            <input type="text" id="place">
+        <button id="btn">Know Updates</button>
+        </div>
+        <div id="info"></div>
+            
+        
+        
+        <div class="row2">
+           
+           <a href="https://www.mygov.in/corona-data/covid19-statewise-status"><button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" >
+                    State/UTs<br>Helpline No.
+                    
+                    <p id="">State/District wise details</p>
+                
+            </button></a>
+            
+            <a href="https://www.mohfw.gov.in/pdf/DistrictWiseList324.pdf"><button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" >
+                    District<br>Reporting
+                    
+                    <p id="">Click to view details</p>
+                
+            </button></a>
+            
+              
+            <a href="https://api.whatsapp.com/send?phone=919013151515&text=&source=&data=&app_absent="><button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" >
+                   Live HelpDesk<br>https://wa.me/919013151515
+                    
+                    <p id="">MyGov Corona Helpdesk</p>
+                
+            </button></a>
+            
+            
+            
+           
+            
+            
+            
+            </div>
+        
+                
+                
+                
+                
+                
+      </div>          
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+              <!--  <div class="navlinks">
+                  <ul>
+                    <a href="#"><li><i class="fab fa-youtube"></i></li></a>
+                    <a href="#"><li><i class="fab fa-facebook-square"></i></li></a>
+                    <a href="#"><li><i class="fab fa-instagram"></i></li></a>
+                    </ul>  
+                    
+                   
+                </div>
+            
+            
+            
+    
+           
+        
+       
+      
+      
+       <input type="text" id="place">
         <button id="btn">Know Horoscope</button>
     
-    <!--<div id="info"></div>-->
+    <p id="confirmed"></p>
+    <p id="deaths"></p>
+    <p id="recovered"></p>
+    
+    </div>-->
     
     <script>
         document.getElementById("btn").onclick = () =>{
             
-           //let p= document.getElementById("country").value;
-fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=India", {
+          let p= document.getElementById("place").value;
+fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=" + p, {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
@@ -30,10 +155,60 @@ fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=I
             
         }) 
         .then(data=>{
-            console.log(data)
-           // console.log(data.covid19Stats[0].country)
-        })
+           //console.log(data)
+           //console.log(data.data.covid19Stats[0].country)
     
+  let x=document.getElementById("confirmed");
+    let total=0;
+
+    
+    let jsonRes = data.data.covid19Stats;
+    for(let i=0; i<jsonRes.length; i++)
+        {
+            
+          total  += jsonRes[i].confirmed;
+          
+           x.innerHTML= "Confirmed Cases: " + total;
+                  
+        }
+    
+    let y=document.getElementById("deaths");
+    let total1=0;
+
+    
+    let jsonRes1 = data.data.covid19Stats;
+    for(let i=0; i<jsonRes1.length; i++)
+        {
+            
+          total1  += jsonRes1[i].deaths;
+          
+           y.innerHTML= "Deaths: " + total1;
+                  
+        }
+    
+    
+    let z=document.getElementById("recovered");
+    let total2=0;
+
+    
+    let jsonRes2 = data.data.covid19Stats;
+    for(let i=0; i<jsonRes2.length; i++)
+        {
+            
+          total2  += jsonRes2[i].recovered;
+          
+           z.innerHTML= "Recovered: " + total2;
+                  
+        }
+     //total  += jsonRes[i].deaths;
+           //total  += jsonRes[i].recovered;
+          //x.innerHTML = "Total Deaths: " + total;
+        //  x.innerHTML = "Confirmed Cases: " + total;
+          //x.innerHTML = "Confirmed Cases: " + total;
+          //x.innerHTML = "Confirmed Cases: " + total; */
+           // document.getElementById('data').x.innerHTML += '<li>'  + total + '</li>';
+   
+        })
         }
             
      </script>
