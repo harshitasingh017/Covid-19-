@@ -16,14 +16,14 @@
                 
                  <div class="row">
             
-            <button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" >
-                    Dashboard
+            <button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" id="dash" >
+                    COVID-19 Dashboard as on :
                     
                     <p id="update"></p>
                 
             </button>
             
-             <button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" >
+             <button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" id="con">
                     Active
                     
                     <p id="confirmed"></p>
@@ -31,103 +31,74 @@
             </button>
             
              
-             <button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" id="deaths">
+             <button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" id="death">
                     Deaths
+                    
+                    <p id="deaths"></p>
             
             </button>
              
                
-             <button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" id="recovered">
+             <button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" id="recov">
                     Recovered
+                    
+                    <p id="recovered"></p>
             
             </button>  
           
         </div>
         
-        <img src="images/aarogya.jpg">
-        
-         <div>
-           <p>Rolling updates on coronavirus disease (COVID-19) from around the world</p>
-            <input type="text" id="place">
-        <button id="btn">Know Updates</button>
-        </div>
-        <div id="info"></div>
+         <div class="world">
+           <p class="head">Rolling updates on coronavirus disease (COVID-19) from around the world</p>
             
+        </div>
+        
+        <div class="know">
+        <input type="text" id="place">
+        <button id="know">Know Updates</button>
+        <div id="info"></div>
+        </div>    
         
         
+        <div class="help"><p class="helpinfo">Government of India Helpline Details</p></div>
         <div class="row2">
            
-           <a href="https://www.mygov.in/corona-data/covid19-statewise-status"><button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" >
+           <a href="https://www.mygov.in/corona-data/covid19-statewise-status" ><button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" id="help1" >
                     State/UTs<br>Helpline No.
                     
-                    <p id="">State/District wise details</p>
+                    <p id="desk1">State/District wise details</p>
                 
             </button></a>
             
-            <a href="https://www.mohfw.gov.in/pdf/DistrictWiseList324.pdf"><button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" >
+            <a href="https://www.mohfw.gov.in/pdf/DistrictWiseList324.pdf" ><button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" id="help2">
                     District<br>Reporting
                     
-                    <p id="">Click to view details</p>
+                    <p id="desk2">Click to view details</p>
                 
             </button></a>
             
               
-            <a href="https://api.whatsapp.com/send?phone=919013151515&text=&source=&data=&app_absent="><button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" >
+            <a href="https://api.whatsapp.com/send?phone=919013151515&text=&source=&data=&app_absent=" ><button class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto" id="help3" >
                    Live HelpDesk<br>https://wa.me/919013151515
                     
-                    <p id="">MyGov Corona Helpdesk</p>
+                    <p id="desk3">MyGov Corona Helpdesk</p>
                 
             </button></a>
-            
-            
-            
-           
-            
-            
-            
+          
             </div>
         
-                
-                
-                
-                
+        <footer>
+            <ul class="social">
+                    <a href="http://youtube.com/mygovindia"><li><i class="fab fa-youtube"></i></li></a>
+                    <a href="https://www.facebook.com/MyGovIndia/"><li><i class="fab fa-facebook-f"></i></li></a>
+                    <a href="#"><li><i class="fab fa-instagram"></i></li></a>
+                    <a href="#"><li><i class="fab fa-twitter"></i></li></a>
+                    </ul> 
+            
+        </footer>         
                 
       </div>          
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-              <!--  <div class="navlinks">
-                  <ul>
-                    <a href="#"><li><i class="fab fa-youtube"></i></li></a>
-                    <a href="#"><li><i class="fab fa-facebook-square"></i></li></a>
-                    <a href="#"><li><i class="fab fa-instagram"></i></li></a>
-                    </ul>  
-                    
-                   
-                </div>
-            
-            
-            
-    
-           
-        
-       
-      
-      
+        <!-- 
        <input type="text" id="place">
         <button id="btn">Know Horoscope</button>
     
@@ -138,10 +109,10 @@
     </div>-->
     
     <script>
-        document.getElementById("btn").onclick = () =>{
+       // document.getElementById("btn").onclick = () =>{
             
-          let p= document.getElementById("place").value;
-fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=" + p, {
+          //let p= document.getElementById("place").value;
+fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=India" , {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
@@ -168,7 +139,7 @@ fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country="
             
           total  += jsonRes[i].confirmed;
           
-           x.innerHTML= "Confirmed Cases: " + total;
+           x.innerHTML+= total;
                   
         }
     
@@ -209,7 +180,7 @@ fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country="
            // document.getElementById('data').x.innerHTML += '<li>'  + total + '</li>';
    
         })
-        }
+    //    }
             
      </script>
           

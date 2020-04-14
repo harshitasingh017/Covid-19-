@@ -16,6 +16,8 @@ margin: 0;}
     
    
     height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     
     
@@ -24,61 +26,176 @@ h1{
     color: white;
     font-size: 35px;
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 35px;
     
     text-align: center;
 }
 
+.bgimg .row{
+    
+    padding-bottom: 20px;
+  }
 
-
-
-
-/*
-.navlinks{
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-}
-
-.navlinks ul{
-    margin-left: 50px;
-    display: inline;
-    padding-left: 600px;
-}
-
-.navlinks ul li{
-    list-style: none;
-    display: inline-block;
-    padding: 18px 25px;
-}
-
-.navlinks ul a{
-    color: #fff;
-    text-decoration: none;
-    font-size: 20px; 
-}
-
-.navlinks ul li::after{
-    content: '';
-    width: 0;
-    height: 2px;
-    background: yellow;
-    display: block;
-    margin: auto;
-    -webkit-transition: .5s;
-    transition: .5s;
-}
-
-.navlinks ul li: hover::after{
-    width: 100%;
+#dash, #con, #death, #recov{
+    height: 80px;
+    width: 220px;
+    border-style: hidden;
+    border-radius: 5%;
+    margin-right: 30px;
+    margin-left:   30px;
+    font-size: 20px;
+    font-family: fantasy;
     
 }
-/*.options{
+
+#dash{
+    background: none;
+    font-family: sans-serif;
+    color: white;
+    margin-left: 120px;
+    text-align: right;
+}
+
+#con{
+    background-color: #5e97af;
+    
+}
+
+#death{
+    background-color: #e56363;
+}
+
+#recov{
+    background-color: #34ac34;
+}
+
+.world{
+   background-color: deepskyblue;
+    margin: 20px 30px;
+    height: 50px;
+}
+
+.head{
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 8px;
+}
+
+
+#place{
+    background-color: azure;
+    width: 260px;
+    height: 30px;
+    margin-left: 500px;
+}
+
+.know{
+    padding-bottom: 40px;
+}
+
+#know{
+    
+    height: 30px;
+    background-color: #b41f3d;
+    font-weight: bold;
+    margin: auto;
+}
+
+.help{
+    margin: 20px 30px;
+    height: 50px;
+    background-color: #37bf37;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    
+}
+
+.helpinfo{
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 8px;
+}
+
+#help1, #help2, #help3{
+    height: 120px;
+    width: 300px;
+    border-style: hidden;
+    border-radius: 2%;
+    margin-right: 30px;
+    margin-left:   30px;
+    font-size: 20px;
+    font-family: sans-serif;
+    margin-top: 10px;
+}
+
+#help1{
+    margin-left:  160px;
+    background-color: #dba8db
+    
+}
+
+#help2{
+    background-color: #e5c281
+}
+
+#help3{
+    background-color: aquamarine
+}
+#desk1{
+    padding-top: 30px;
+    color: purple;
+}
+
+#desk2{
+    padding-top: 30px;
+    color: #c39540;
+}
+
+#desk3{
+    padding-top: 30px;
+    color: #298384;
+}
+
+footer{
+    margin-top: 40px;
+    height: 75px;
+    width: auto;
+    background-color: darkgrey
+        
+}
+
+.social{
+    list-style: none;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    display: inline;
+    padding-top: 15px;
+    }
+
+.fa-youtube{
+    font-size: 50px;
+    color: red;
+    margin-left: 530px;
+}
+
+.fa-facebook-f{
+    font-size: 50px;
+    color: blue;
+    margin-left: 40px;
+}
+
+.fa-instagram{
+    font-size: 50px;
+    color: #b7276f;
+    margin-left: 40px;
+}
+
+.fa-twitter{
+    font-size: 50px;
+    color: #36b0d9;
+    margin-left: 40px;
 }
